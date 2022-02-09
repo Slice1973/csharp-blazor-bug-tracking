@@ -1,13 +1,8 @@
 ﻿@page "/new-bug"
-
 <h3>New Bug</h3>
 
 <EditForm Model="AddBug">
-    <input type="text" @bind-value="@AddBug.Title" placeholder="Enter Description" />
+    <input type="text" @bind-value="AddBug.Title" placeholder="Enter Description" />
     <input type="number" @bind-value="AddBug.Priority" placeholder="Enter Priority" />
     <button type="submit">Add Bug</button>
 </EditForm>
-
-@code {
-
-}
