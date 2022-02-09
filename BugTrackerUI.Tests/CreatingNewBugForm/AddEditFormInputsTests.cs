@@ -33,12 +33,12 @@ namespace M3_BugTrackerUI.Tests.CreatingNewBugForm
                 {
                     var inputType = "Text";
                     var parsedInput = editForm.Descendants("InputText")
-                        .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-Value"]?.Value == $"@AddBug.{label}");
+                        .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-value"]?.Value == $"@AddBug.{label}");
 
                     if (parsedInput == null)
                     {
                         parsedInput = editForm.Descendants("InputNumber")
-                            .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-Value"]?.Value == $"@AddBug.{label}");
+                            .FirstOrDefault(x => x.Attributes["placeholder"]?.Value == $"Enter {label}" && x.Attributes["@bind-value"]?.Value == $"@AddBug.{label}");
 
                         if (parsedInput != null)
                         {

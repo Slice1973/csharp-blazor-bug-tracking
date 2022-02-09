@@ -1,10 +1,24 @@
 ﻿@page "/new-bug"
-<h3>New Bug</h3>
+<h3>Add New Bug</h3>
 
 <EditForm Model="AddBug">
     <ValidationSummary />
-    <DataAnnotationsValidator/>
-    <input type="text" @bind-value="AddBug.Title" placeholder="Enter Description" />
-    <input type="number" @bind-value="AddBug.Priority" placeholder="Enter Priority" />
+    <DataAnnotationsValidator />
+    <InputText @bind-value="@AddBug.Title" placeholder="Enter Title" />
+    <InputText @bind-value="@AddBug.Description" placeholder="Enter Description" />
+    <InputText @bind-value="@AddBug.Priority" placeholder="Enter Priority" />
     <button type="submit">Add Bug</button>
 </EditForm>
+
+@code {
+    [Inject]
+    public IBugService BugService { get; set; }
+    [Inject]
+    public NavigationManager NavService { get; set; }
+    public Bug AddBug { get; set; } = new();
+
+    protected void HandleValidSubmit()
+    {
+        BugService.AddBug(AddBug);
+    }
+}
