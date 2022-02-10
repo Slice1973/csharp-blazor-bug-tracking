@@ -9,7 +9,6 @@
             <th>Priority</th>
         </tr>
     </thead>
-    <tbody>
         @foreach (var bug in Bugs)
         {
             <tr>
@@ -19,7 +18,7 @@
                 <td>@bug.Priority</td>
             </tr>
         }
-    </tbody>
+  
 </table>
 
 @code {
